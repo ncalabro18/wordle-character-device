@@ -1,38 +1,39 @@
 
-### Instructions
+__The wait is over__: Wordle, as a Linux character device.
 
- - Create a Podman container and clone the repository inside.
+### Quick Start Guide:
 
- - Set your favorite shell as the init process.
+Step 1: 
 
- - Run ```make run```
+&nbsp;&nbsp;Write your own shell 🐚. (busybox exists, I'm not accepting any more customer complaints, fish are supposed to swim)
 
- - Add the module to the Kernel runtime: ```insmod driver.ko```
+Step 2 (optional):
 
- - ```cd /dev``` - device file is located at /dev/wordle
+&nbsp;&nbsp;Spin up a RISC-V RHEL Podman container (subscription not included). 
 
- - To enter a word, use ``printf 5_letter_word > wordle```
+Step 3:
 
- - Show results via ```cat wordle```
+&nbsp;&nbsp;Mount 🐎 the device.
 
+Step 4:
 
- ### ASCII Legend
+&nbsp;&nbsp;Play via cat and printf against the mounted device file, like a NORMAL person. (cat and printf not included, see step 1)
+
+Step 5:
+
+&nbsp;&nbsp;I am not responsible for any damaged hardware. Those who skip step 2 have my full moral support and absolutely nothing else.
+
+Step 6:
+
+&nbsp;&nbsp;Don’t panic – wordle will handle that 👍 
+
+### Wordle Feedback Encoding Table
+
+Feedback is returned in a highly intuitive format that will feel immediately familiar:
 
 | Value | Meaning |
 |-------|---------|
 | `0` | Letter not in word |
 | `1` | Letter in word, wrong position |
 | `2` | Letter in correct position |
-
-A result of `22222` means you won. `33333` means you lost.
-
-You have **5 guesses**. Only uppercase letters are accepted.
-
-
-## Controls
-
-| Operation | Effect |
-|-----------|--------|
-| `lseek(SEEK_SET)` | Reset the game with a new secret word |
-| `lseek(SEEK_CUR)` | Returns the number of guesses remaining |
 
