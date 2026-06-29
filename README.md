@@ -1,11 +1,11 @@
 
-__The wait is over__: Wordle, as a Linux character device.
+__The wait is over__: Wordle, as a Linux character device
 
 ### Quick Start Guide:
 
 Step 1: 
 
-&nbsp;&nbsp;Write your own shell 🐚. (busybox exists, I'm not accepting any more customer complaints, fish are supposed to swim)
+&nbsp;&nbsp;Write your own shell 🐚. (use BusyBox, I can't accept more customer complaints).
 
 Step 2 (optional):
 
@@ -17,7 +17,7 @@ Step 3:
 
 Step 4:
 
-&nbsp;&nbsp;Play via cat and printf against the mounted device file, like a NORMAL person. (cat and printf not included, see step 1)
+&nbsp;&nbsp;Play via cat and printf against the mounted device file `/dev/wordle`, gone are the day of a cumbersome web app (cat and printf not included, see step 1).
 
 Step 5:
 
@@ -36,4 +36,3 @@ Feedback is returned in a highly intuitive format that will feel immediately fam
 | `0` | Letter not in word |
 | `1` | Letter in word, wrong position |
 | `2` | Letter in correct position |
-
